@@ -4,4 +4,17 @@
 
 RISCV-GNU-Tooolchain: Handle - Tony (Not much modifications as of now)
 
-This sb-vertical branch tracks the upstream origin/master branch
+Change the lines with curl for Makefile generated for gnu-toolchain
+(curl takes forver to download the gnu source -- Use wget)
+
+Replace the fololowing Makefile lines - 
+#cd src && (cat $(DISTDIR)/$(subst src/original-,,$@)-$($(subst src/original-,,$@)_version).tar.gz || /usr/bin/curl -o - --ftp-pasv $($(subst src/original-,,$@)_url)) | tar zxf -
+
+-----WITH------
+
+cd src && (cat $(DISTDIR)/$(subst src/original-,,$@)-$($(subst src/original-,,$@)_version).tar.gz || /usr/bin/wget -t 100 $($(subst src/original-,,$@)_url))
+gunzip $(subst original-,,$@)-$($(subst src/original-,,$@)_version).tar.gz
+tar -xvf $(subst original-,,$@)-$($(subst src/original-,,$@)_version).tar
+
+
+This sb-vertical branch tracks the upstream origin/sb-vertical branch
