@@ -2,8 +2,19 @@
  Softbrain Vertical Infrastructure -- RISCV-ISA-SIM 
 ////////////////////////////////////////////////////
 
-RISCV-GNU-Tooolchain: Handle - Tony (Not much modifications as of now)
+RISCV-GNU-Tooolchain: Handle - Tony
 
+Modifications here are to the assembler to support new instructions.  Opcode MASK/MATCH'ers
+are generated from riscv-parseopcodes script.
+
+
+
+The following is an optional step which may or many not reduce compilation time.  Tony
+does not recommend it as it is a hack, and actually doesn't help speed things up much.
+What is more effective is actually just compiling NOT ON AFS.  Use a scratch drive if
+possible.
+
+************************************************************************************
 Change the lines with curl for Makefile generated for gnu-toolchain
 (curl takes forver to download the gnu source -- Use wget)
 
@@ -14,7 +25,7 @@ Replace the fololowing Makefile lines -
 
 cd src && (cat $(DISTDIR)/$(subst src/original-,,$@)-$($(subst src/original-,,$@)_version).tar.gz || /usr/bin/wget -t 100 $($(subst src/original-,,$@)_url))
 gunzip $(subst original-,,$@)-$($(subst src/original-,,$@)_version).tar.gz
-tar -xvf $(subst original-,,$@)-$($(subst src/original-,,$@)_version).tar
-
+tar -xvf $(subst original-,,$@)-$($(subst src/original-,,$@)_version).tar -C src
+**********************************************************************************
 
 This sb-vertical branch tracks the upstream origin/sb-vertical branch

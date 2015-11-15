@@ -506,7 +506,7 @@
 #define MATCH_SB_DMA_SCR 0x2b
 #define MASK_SB_DMA_SCR  0x707f
 #define MATCH_SB_SCR_RD 0x102b
-#define MASK_SB_SCR_RD  0x1f0707f
+#define MASK_SB_SCR_RD  0x707f
 #define MATCH_SB_DMA_RD 0x202b
 #define MASK_SB_DMA_RD  0x7fff
 #define MATCH_SB_SET_ITER 0x207b
@@ -522,7 +522,7 @@
 #define MATCH_SB_WR_DMA 0x405b
 #define MASK_SB_WR_DMA  0xfff07fff
 #define MATCH_SB_WR_RD 0x505b
-#define MASK_SB_WR_RD  0xfffff
+#define MASK_SB_WR_RD  0x7fff
 #define CSR_FFLAGS 0x1
 #define CSR_FRM 0x2
 #define CSR_FCSR 0x3
