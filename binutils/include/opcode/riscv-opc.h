@@ -512,7 +512,7 @@
 #define MATCH_SB_SET_ITER 0x207b
 #define MASK_SB_SET_ITER  0xfff07fff
 #define MATCH_SB_CONST 0x402b
-#define MASK_SB_CONST  0x7fff
+#define MASK_SB_CONST  0x707f
 #define MATCH_SB_WR 0x5b
 #define MASK_SB_WR  0xfffff
 #define MATCH_SB_WR_SCR 0x105b
