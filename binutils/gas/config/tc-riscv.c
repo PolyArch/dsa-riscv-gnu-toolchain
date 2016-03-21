@@ -112,7 +112,7 @@ riscv_subset_supports (const char *feature)
     return FALSE;
 
   for (s = riscv_subsets; s != NULL; s = s->next)
-    if (strcmp (s->name, p) == 0)
+    if (strcasecmp (s->name, p) == 0)
       /* FIXME: once we support version numbers:
 	 return major == s->version_major && minor <= s->version_minor; */
       return TRUE;
@@ -881,7 +881,11 @@ load_const (int reg, expressionS *ep)
   lower.X_add_number = (int32_t) ep->X_add_number << (32-shift) >> (32-shift);
   upper.X_add_number -= lower.X_add_number;
 
-  gas_assert (ep->X_op == O_constant);
+  if (ep->X_op != O_constant)
+    {
+      as_bad (_("unsupported large constant"));
+      return;
+    }
 
   if (xlen > 32 && !IS_SEXT_32BIT_NUM(ep->X_add_number))
     {
@@ -1607,6 +1611,9 @@ rvc_lui:
 	    case 'A':
 	      my_getExpression (imm_expr, s);
 	      normalize_constant_expr (imm_expr);
+	      /* The 'A' format specifier must be a symbol. */
+	      if (imm_expr->X_op != O_symbol)
+	        break;
 	      *imm_reloc = BFD_RELOC_32;
 	      s = expr_end;
 	      continue;
