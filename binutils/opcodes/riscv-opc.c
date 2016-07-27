@@ -126,9 +126,11 @@ const struct riscv_opcode riscv_builtin_opcodes[] =
 {"sb_const",      "I",   "s,t,q",  MATCH_SB_CONST,       MASK_SB_CONST,       match_opcode, 0}, 
 {"sb_wr",         "I",   "j",      MATCH_SB_WR,          MASK_SB_WR,          match_opcode, 0}, 
 {"sb_wr_scr",     "I",   "s,t,q",  MATCH_SB_WR_SCR,      MASK_SB_WR_SCR,      match_opcode, 0}, 
-{"sb_dma_addr_p",  "I",  "s,t,q",  MATCH_SB_DMA_ADDR_P,  MASK_SB_DMA_ADDR_P,  match_opcode, 0}, 
+{"sb_dma_addr_p", "I",   "s,t,q",  MATCH_SB_DMA_ADDR_P,  MASK_SB_DMA_ADDR_P,  match_opcode, 0}, 
 {"sb_wr_dma",     "I",   "s",      MATCH_SB_WR_DMA,      MASK_SB_WR_DMA,      match_opcode, 0}, 
 {"sb_wr_rd",      "I",   "s,j",    MATCH_SB_WR_RD,       MASK_SB_WR_RD,       match_opcode, 0}, 
+{"sb_wait",       "I",   "s,t,q",  MATCH_SB_WAIT,        MASK_SB_WAIT,        match_opcode, 0}, 
+
       
  //{"sb_dma_addr2","I",   "s,t",  MATCH_SB_, MASK_SB,    match_opcode, INSN_ALIAS}, /*scratch->cgra*/ 
      
