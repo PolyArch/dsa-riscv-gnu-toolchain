@@ -126,6 +126,7 @@ const struct riscv_opcode riscv_builtin_opcodes[] =
 {"sb_dma_rd",     "I",   "s,t,q",  MATCH_SB_DMA_RD,      MASK_SB_DMA_RD,      match_opcode, 0}, 
 {"sb_set_iter",   "I",   "s",      MATCH_SB_SET_ITER,    MASK_SB_SET_ITER,    match_opcode, 0}, 
 {"sb_const",      "I",   "s,t,q",  MATCH_SB_CONST,       MASK_SB_CONST,       match_opcode, 0}, 
+{"sb_recv",       "I",   "d,s,j",    MATCH_SB_RECV,        MASK_SB_RECV,      match_opcode, 0}, 
 {"sb_garb",       "I",   "s,t,q",  MATCH_SB_GARB,        MASK_SB_GARB,        match_opcode, 0}, 
 {"sb_wr",         "I",   "j",      MATCH_SB_WR,          MASK_SB_WR,          match_opcode, 0}, 
 {"sb_wr_scr",     "I",   "s,t,q",  MATCH_SB_WR_SCR,      MASK_SB_WR_SCR,      match_opcode, 0}, 
