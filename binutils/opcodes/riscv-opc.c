@@ -116,26 +116,27 @@ static int match_c_lui(const struct riscv_opcode *op, insn_t insn)
 const struct riscv_opcode riscv_builtin_opcodes[] =
 {
 /* name,          isa,   operands, match, mask, match_func, pinfo */
-{"sb_cfg",        "I",   "s,j",    MATCH_SB_CFG,         MASK_SB_CFG,         match_opcode, 0},                   
+{"sb_cfg",        "I",   "s,j",    MATCH_SB_CFG,         MASK_SB_CFG,         match_opcode, 0},
 {"sb_cfg_port",   "I",   "s,t,q",  MATCH_SB_CFG_PORT,    MASK_SB_CFG_PORT,    match_opcode, 0},
-{"sb_stride",     "I",   "s,t",    MATCH_SB_STRIDE,      MASK_SB_STRIDE,      match_opcode, 0},                   
-{"sb_dma_addr",   "I",   "s,t",    MATCH_SB_DMA_ADDR,    MASK_SB_DMA_ADDR,    match_opcode, 0}, /*dma->scratch*/  
+{"sb_ctx",        "I",   "s,t,q",  MATCH_SB_CTX,         MASK_SB_CTX,         match_opcode, 0},
+{"sb_stride",     "I",   "s,t",    MATCH_SB_STRIDE,      MASK_SB_STRIDE,      match_opcode, 0},
+{"sb_dma_addr",   "I",   "s,t",    MATCH_SB_DMA_ADDR,    MASK_SB_DMA_ADDR,    match_opcode, 0},
 {"sb_dma_scr",    "I",   "s,t,q",  MATCH_SB_DMA_SCR,     MASK_SB_DMA_SCR,     match_opcode, 0},
 {"sb_scr_dma",    "I",   "s,t,q",  MATCH_SB_SCR_DMA,     MASK_SB_SCR_DMA,     match_opcode, 0},
-{"sb_scr_rd",     "I",   "s,t,q",  MATCH_SB_SCR_RD,      MASK_SB_SCR_RD,      match_opcode, 0}, /*scratch->cgra*/ 
-{"sb_dma_rd",     "I",   "s,t,q",  MATCH_SB_DMA_RD,      MASK_SB_DMA_RD,      match_opcode, 0}, 
-{"sb_set_iter",   "I",   "s",      MATCH_SB_SET_ITER,    MASK_SB_SET_ITER,    match_opcode, 0}, 
-{"sb_const",      "I",   "s,t,q",  MATCH_SB_CONST,       MASK_SB_CONST,       match_opcode, 0}, 
-{"sb_recv",       "I",   "d,s,j",    MATCH_SB_RECV,        MASK_SB_RECV,      match_opcode, 0}, 
-{"sb_garb",       "I",   "s,t,q",  MATCH_SB_GARB,        MASK_SB_GARB,        match_opcode, 0}, 
-{"sb_wr",         "I",   "j",      MATCH_SB_WR,          MASK_SB_WR,          match_opcode, 0}, 
-{"sb_wr_scr",     "I",   "s,t,q",  MATCH_SB_WR_SCR,      MASK_SB_WR_SCR,      match_opcode, 0}, 
-{"sb_dma_addr_p", "I",   "s,t,q",  MATCH_SB_DMA_ADDR_P,  MASK_SB_DMA_ADDR_P,  match_opcode, 0}, 
-{"sb_wr_dma",     "I",   "s,t,q",  MATCH_SB_WR_DMA,      MASK_SB_WR_DMA,      match_opcode, 0}, 
-{"sb_wr_rd",      "I",   "s,j",    MATCH_SB_WR_RD,       MASK_SB_WR_RD,       match_opcode, 0}, 
-{"sb_ind",        "I",   "s,t,q",  MATCH_SB_IND,         MASK_SB_IND,         match_opcode, 0}, 
-{"sb_ind_wr",     "I",   "s,t,q",  MATCH_SB_IND_WR,      MASK_SB_IND_WR,      match_opcode, 0}, 
-{"sb_wait",       "I",   "s,t,q",  MATCH_SB_WAIT,        MASK_SB_WAIT,        match_opcode, 0}, 
+{"sb_scr_rd",     "I",   "s,t,q",  MATCH_SB_SCR_RD,      MASK_SB_SCR_RD,      match_opcode, 0},
+{"sb_dma_rd",     "I",   "s,t,q",  MATCH_SB_DMA_RD,      MASK_SB_DMA_RD,      match_opcode, 0},
+{"sb_set_iter",   "I",   "s",      MATCH_SB_SET_ITER,    MASK_SB_SET_ITER,    match_opcode, 0},
+{"sb_const",      "I",   "s,t,q",  MATCH_SB_CONST,       MASK_SB_CONST,       match_opcode, 0},
+{"sb_recv",       "I",   "d,s,j",    MATCH_SB_RECV,        MASK_SB_RECV,      match_opcode, 0},
+{"sb_garb",       "I",   "s,t,q",  MATCH_SB_GARB,        MASK_SB_GARB,        match_opcode, 0},
+{"sb_wr",         "I",   "j",      MATCH_SB_WR,          MASK_SB_WR,          match_opcode, 0},
+{"sb_wr_scr",     "I",   "s,t,q",  MATCH_SB_WR_SCR,      MASK_SB_WR_SCR,      match_opcode, 0},
+{"sb_dma_addr_p", "I",   "s,t,q",  MATCH_SB_DMA_ADDR_P,  MASK_SB_DMA_ADDR_P,  match_opcode, 0},
+{"sb_wr_dma",     "I",   "s,t,q",  MATCH_SB_WR_DMA,      MASK_SB_WR_DMA,      match_opcode, 0},
+{"sb_wr_rd",      "I",   "s,j",    MATCH_SB_WR_RD,       MASK_SB_WR_RD,       match_opcode, 0},
+{"sb_ind",        "I",   "s,t,q",  MATCH_SB_IND,         MASK_SB_IND,         match_opcode, 0},
+{"sb_ind_wr",     "I",   "s,t,q",  MATCH_SB_IND_WR,      MASK_SB_IND_WR,      match_opcode, 0},
+{"sb_wait",       "I",   "s,t,q",  MATCH_SB_WAIT,        MASK_SB_WAIT,        match_opcode, 0},
 
 
       
