@@ -119,7 +119,7 @@ const struct riscv_opcode riscv_builtin_opcodes[] =
 {"sb_cfg",        "I",   "s,j",    MATCH_SB_CFG,         MASK_SB_CFG,         match_opcode, 0},
 {"sb_cfg_port",   "I",   "s,t,q",  MATCH_SB_CFG_PORT,    MASK_SB_CFG_PORT,    match_opcode, 0},
 {"sb_ctx",        "I",   "s,t,q",  MATCH_SB_CTX,         MASK_SB_CTX,         match_opcode, 0},
-{"sb_stride",     "I",   "s,t",    MATCH_SB_STRIDE,      MASK_SB_STRIDE,      match_opcode, 0},
+{"sb_stride",     "I",   "s,t,q",  MATCH_SB_STRIDE,      MASK_SB_STRIDE,      match_opcode, 0},
 {"sb_dma_addr",   "I",   "s,t",    MATCH_SB_DMA_ADDR,    MASK_SB_DMA_ADDR,    match_opcode, 0},
 {"sb_dma_scr",    "I",   "s,t,q",  MATCH_SB_DMA_SCR,     MASK_SB_DMA_SCR,     match_opcode, 0},
 {"sb_scr_dma",    "I",   "s,t,q",  MATCH_SB_SCR_DMA,     MASK_SB_SCR_DMA,     match_opcode, 0},

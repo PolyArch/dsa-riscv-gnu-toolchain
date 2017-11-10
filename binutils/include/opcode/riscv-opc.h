@@ -502,7 +502,7 @@
 #define MATCH_SB_CTX 0x200b
 #define MASK_SB_CTX  0x707f
 #define MATCH_SB_STRIDE 0x7b
-#define MASK_SB_STRIDE  0xfe007fff
+#define MASK_SB_STRIDE  0x707f
 #define MATCH_SB_DMA_ADDR 0x107b
 #define MASK_SB_DMA_ADDR  0xfe007fff
 #define MATCH_SB_DMA_SCR 0x2b
