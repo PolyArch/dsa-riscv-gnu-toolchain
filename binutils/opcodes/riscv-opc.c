@@ -138,6 +138,7 @@ const struct riscv_opcode riscv_builtin_opcodes[] =
 {"sb_ind",        "I",   "s,t,q",  MATCH_SB_IND,         MASK_SB_IND,         match_opcode, 0},
 {"sb_ind_wr",     "I",   "s,t,q",  MATCH_SB_IND_WR,      MASK_SB_IND_WR,      match_opcode, 0},
 {"sb_atom_op",    "I",   "s,t,q",  MATCH_SB_ATOMIC_SCR_OP,     MASK_SB_ATOMIC_SCR_OP,     match_opcode, 0},
+{"sb_const_scr",  "I",   "s,t",    MATCH_SB_CONST_SCR,   MASK_SB_CONST_SCR,   match_opcode, 0},
 {"sb_cfg_ind",    "I",   "s,t,q",  MATCH_SB_CFG_IND,     MASK_SB_CFG_IND,     match_opcode, 0},
 {"sb_wait",       "I",   "s,t,q",  MATCH_SB_WAIT,        MASK_SB_WAIT,        match_opcode, 0},
 
