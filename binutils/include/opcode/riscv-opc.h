@@ -543,7 +543,7 @@
 #define MASK_SB_IND_WR  0x707f
 #define MATCH_SB_CFG_IND 0x707b
 #define MASK_SB_CFG_IND  0x707f
-#define MATCH_SB_CFG_ATOM_OP 0x707b
+#define MATCH_SB_CFG_ATOM_OP 0x705b
 #define MASK_SB_CFG_ATOM_OP  0x707f
 #define MATCH_SB_WAIT 0x407b
 #define MASK_SB_WAIT  0x707f
