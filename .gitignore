@@ -1,6 +1,5 @@
 autom4te.cache
 build
-configure
 config.log
 config.status
 Makefile
