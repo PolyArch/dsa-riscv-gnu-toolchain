@@ -19,3 +19,6 @@
 [submodule "riscv-gdb"]
 	path = riscv-gdb
 	url = git://github.com/riscv/riscv-binutils-gdb.git
+[submodule "riscv-binutils-gdb"]
+	path = riscv-binutils-gdb
+	url = git@github.com:PolyArch/riscv-binutils-gdb.git
